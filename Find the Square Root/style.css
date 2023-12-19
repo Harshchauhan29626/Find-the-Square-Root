@@ -1,0 +1,139 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    justify-content: center;
+    align-items: center;
+    min-width: 100vh;
+    background: #23242a;
+}
+
+h1 {
+    text-align: center;
+    color: #45f3ff;
+}
+
+label{
+    color: #ff2778;
+    font-size: 20px;
+}
+
+input{
+    background-color: #ff2778;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    height: 2rem;
+}
+
+button{
+    background-color: #45f3ff;
+    border-radius: 6px;
+    height: 2rem;
+    border: none;
+}
+
+#p1{
+    color: #ff2778;
+    text-align: center;
+    font-size: 20px;
+    margin-top: 0.8rem;
+}
+
+.box {
+    position: relative;
+    width: 380px;
+    height: 340px;
+    background: #1c1c1c;
+    border-radius: 8px;
+    overflow: hidden;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+}
+
+.box form {
+    position: absolute;
+    inset: 4px;
+    background: #222;
+    padding: 50px 40px;
+    border-radius: 8px;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+}
+
+.box::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 380px;
+    height: 340px;
+    background: linear-gradient(0deg, transparent, transparent, #45f3ff, #45f3ff, #45f3ff);
+    z-index: 1;
+    transform-origin: bottom right;
+    animation: animate 6s linear infinite;
+}
+
+.box::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 380px;
+    height: 340px;
+    background: linear-gradient(0deg, transparent, transparent, #45f3ff, #45f3ff, #45f3ff);
+    z-index: 1;
+    transform-origin: bottom right;
+    animation: animate 6s linear infinite;
+    animation-delay: -3s;
+}
+
+.borderLine {
+    position: absolute;
+    top: 0;
+    inset: 0;
+}
+
+.borderLine::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 380px;
+    height: 340px;
+    background: linear-gradient(0deg, transparent, transparent, #ff2778, #ff2778, #ff2778);
+    z-index: 1;
+    transform-origin: bottom right;
+    animation: animate 6s linear infinite;
+    animation-delay: -1.5s;
+}
+
+.borderLine::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 380px;
+    height: 340px;
+    background: linear-gradient(0deg, transparent, transparent, #ff2778, #ff2778, #ff2778);
+    z-index: 1;
+    transform-origin: bottom right;
+    animation: animate 6s linear infinite;
+    animation-delay: -4.5s;
+}
+
+@keyframes animate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
